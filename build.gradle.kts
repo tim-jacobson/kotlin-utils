@@ -15,6 +15,19 @@ group = "eu.tjacobson.kotlin.utils"
 version = System.getenv("PROJECT_VERSION") ?: "0.0.0-SNAPSHOT"
 description = "Kotlin Utilities"
 
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation(kotlin("stdlib-jdk8"))
+
+    testImplementation(platform("org.junit:junit-bom:5.5.2"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.assertj:assertj-core:3.11.1")
+}
+
 idea {
     module.isDownloadJavadoc = true
     project {
@@ -52,12 +65,6 @@ tasks {
             exceptionFormat = TestExceptionFormat.FULL
         }
     }
-}
-dependencies {
-    implementation(kotlin("stdlib-jdk8"))
-}
-repositories {
-    mavenCentral()
 }
 val compileKotlin: KotlinCompile by tasks
 compileKotlin.kotlinOptions {
