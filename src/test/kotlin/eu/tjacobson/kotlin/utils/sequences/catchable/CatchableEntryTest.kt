@@ -1,7 +1,6 @@
-package eu.tjacobson.kotlin.utils
+package eu.tjacobson.kotlin.utils.sequences.catchable
 
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
@@ -15,7 +14,7 @@ internal class CatchableEntryTest {
 
     @Test
     fun getHasErr_returns_false() {
-        val entries: List<CatchableEntry<Any?,String>> = listOf(
+        val entries: List<CatchableEntry<Any?, String>> = listOf(
             VALID_CATCHABLE_ENTRY_1,
             VALID_CATCHABLE_ENTRY_2,
             INVALID_CATCHABLE_ENTRY_1,
